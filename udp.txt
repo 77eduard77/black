@@ -1,0 +1,6 @@
+As you can see, we change the socket type to SOCK_DGRAM <1>when creating
+the socket object. The next step is to simply call sendto() <2>, passing in
+the data and the server you want to send the data to. Because UDP is a connectionless
+protocol, there is no call to connect() beforehand. The last step
+is to call recvfrom() <3> to receive UDP data back. You will also notice that it
+returns both the data and the details of the remote host and port.

@@ -1,0 +1,15 @@
+We first create a socket object with the AF_INET and SOCK_STREAM parameters.
+1> The AF_INET parameter is saying we are going to use a standard
+IPv4 address or hostname, and SOCK_STREAM indicates that this will be a TCP
+client.
+ We then connect the client to the server <2> and send it some data <3>.
+The last step is to receive some data back and print out the response <4>.
+This is the simplest form of a TCP client, but the one you will write most
+often.
+In the above code snippet, we are making some serious assumptions
+about sockets that you definitely want to be aware of. The first assumption
+is that our connection will always succeed, and the second is that the
+server is always expecting us to send data first (as opposed to servers that
+expect to send data to you first and await your response). Our third assumption
+is that the server will always send us data back in a timely fashion. We
+make these assumptions largely for simplicity’s sake.
