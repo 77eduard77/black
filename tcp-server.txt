@@ -1,0 +1,17 @@
+To start off, we pass in the IP address and port we want the server to
+listen on [1]. Next we tell the server to start listening [2] with a maximum
+backlog of connections set to 5. We then put the server into its main loop,
+where it is waiting for an incoming connection. When a client connects [3],
+we receive the client socket into the client variable, and the remote connection
+details into the addr variable. We then create a new thread object that
+points to our handle_client function, and we pass it the client socket object
+as an argument. We then start the thread to handle the client connection [4],
+and our main server loop is ready to handle another incoming connection.
+The handle_client [5] function performs the recv() and then sends a simple
+message back to the client.
+
+First we define the IP address and port that we want the server to listen on. We then define a handle_client function that starts a thread to handle client connections.
+The function takes the client socket and gets data from the client, sending a ACK message.
+
+The main function for our server, tcp_server, creates a server socket and starts listening on the port and IP (we set the maximum backlog of connections to 5).
+Then it starts a loop waiting for when a client connects. When this happens, it receives the client socket (the client variables go to the addr variable).

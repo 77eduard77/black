@@ -13,3 +13,6 @@ server is always expecting us to send data first (as opposed to servers that
 expect to send data to you first and await your response). Our third assumption
 is that the server will always send us data back in a timely fashion. We
 make these assumptions largely for simplicity’s sake.
+
+The AF_INET parameter is used to define the standard IPv4 address (other options are AF_UNIX and AF_INET6).
+The SOCK_STREAM parameters indicate it is a TCP connection (other options are SOCK_DGRAM, SOCK_RAW, SOCK_RDM, SOCK_SEQPACKET).
