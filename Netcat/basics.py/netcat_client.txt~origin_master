@@ -1,7 +1,0 @@
-Sometimes when you are penetrating a system, you wish you have netcat, which might be not installed. However, if you have Python, you can create a netcat network client and server.
-
-The following script is the simplest netcat client setup one can have, extended from our TCP client script to support a loop.
-
-In addition, now we use the sendall method. Unlike send, it will continue to send data until either all data has been sent or an error occurs (None is returned on success).
-
-We also use close to release the resource. This does not necessarily close the connection immediately so we use shutdown to close the connection in a timely fashion:
